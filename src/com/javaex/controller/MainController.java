@@ -16,9 +16,7 @@ public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// constructor
-
 	// method - g/s
-
 	// method - general
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,7 +26,7 @@ public class MainController extends HttpServlet {
 
 		// index.jsp 로 forward
 		WebUtil.forward(request, response, "/WEB-INF/views/main/index.jsp");
-		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
