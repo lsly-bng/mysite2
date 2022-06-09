@@ -77,7 +77,7 @@ public class BoardDao {
 			query += "        b.content, ";
 			query += "        u.name, ";
 			query += "        b.hit, ";
-			query += "        to_char(b.reg_date, 'yyyy-mm-dd hh:mi') reg_date, ";
+			query += "        to_char(b.reg_date, 'yyyy-mm-dd hh24:mi') reg_date, ";
 			query += "        b.user_no ";
 			query += "from board b, users u ";
 			query += "where b.user_no = u.no ";
@@ -133,8 +133,8 @@ public class BoardDao {
 			query += "        b.content, ";
 			query += "        u.name, ";
 			query += "        b.hit, ";
-			query += "        to_char(b.reg_date, 'yyyy-mm-dd hh24:mi') regDate, ";
-			query += "        u.no ";
+			query += "        to_char(b.reg_date, 'yyyy-mm-dd hh24:mi') reg_date, ";
+			query += "        b.user_no ";
 			query += "from board b, users u ";
 			query += "where b.user_no = u.no ";
 			query += "and b.no = ? ";
@@ -153,8 +153,8 @@ public class BoardDao {
 				String content = rs.getString("content");
 				String userName = rs.getString("name");
 				int hit = rs.getInt("hit");
-				String regDate = rs.getString("regDate");
-				int userNo = rs.getInt("userNo");
+				String regDate = rs.getString("reg_date");
+				int userNo = rs.getInt("user_no");
 
 				bVo = new BoardVo(bNo, title, content, hit, regDate, userNo, userName);
 			}
@@ -229,7 +229,7 @@ public class BoardDao {
 	}
 
 	// 게시글 수정 메소드
-	public int modify(BoardVo bVo) {
+	public int brdModify(BoardVo bVo) {
 
 		int count = -1;
 

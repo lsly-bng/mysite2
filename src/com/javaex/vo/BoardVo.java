@@ -24,10 +24,10 @@ public class BoardVo {
 		this.content = content;
 	}
 
-	public BoardVo(String title, String content, int userNo) {
+	public BoardVo(String title, String content, int no) {
 		this.title = title;
 		this.content = content;
-		this.userNo = userNo;
+		this.no = no;
 	}
 
 	public BoardVo(int no, String title, String content, int hit, String regDate, int userNo) {

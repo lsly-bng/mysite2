@@ -48,10 +48,10 @@
 
 				<div id="board">
 					<div id="read">
-						<form action="./board" method="get">
+						<form action="./board" method="post">
 							<!-- 작성자 -->
 							<div class="form-group">
-								<span class="form-text">작성자</span> <span class="form-value">${bvo.userName}</span>
+								<span class="form-text">작성자</span> <span class="form-value">${bVo.userName}</span>
 							</div>
 
 							<!-- 조회수 -->
