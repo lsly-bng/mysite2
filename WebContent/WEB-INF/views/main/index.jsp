@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.javaex.vo.UserVo"%>
-
-<%
-UserVo authUser = (UserVo) session.getAttribute("authUser");
-System.out.println(authUser);
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -22,44 +17,9 @@ System.out.println(authUser);
 <body>
 	<div id="wrap">
 
-		<div id="header" class="clearfix">
-			<h1>
-				<a href="./main">MySite</a>
-			</h1>
-
-			<%
-			if (authUser == null) {
-			%>
-			<!-- 로그인 실패, 로그인전 -->
-			<ul>
-				<li><a href="./user?action=loginForm" class="btn_s">로그인</a></li>
-				<li><a href="./user?action=joinForm" class="btn_s">회원가입</a></li>
-			</ul>
-			<%
-			} else {
-			%>
-			<!-- 로그인 성공 -->
-			<ul>
-				<li><%=authUser.getName()%> 님 안녕하세요 :)</li>
-				<li><a href="./user?action=logout" class="btn_s">로그아웃</a></li>
-				<li><a href="./user?action=modifyForm" class="btn_s">회원정보수정</a></li>
-			</ul>
-			<%
-			}
-			%>
-
-		</div>
+		<!-- header -->
+		<c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
 		<!-- //header -->
-
-		<div id="nav">
-			<ul class="clearfix">
-				<li><a href="">입사지원서</a></li>
-				<li><a href="">게시판</a></li>
-				<li><a href="">갤러리</a></li>
-				<li><a href="./guest">방명록</a></li>
-			</ul>
-		</div>
-		<!-- //nav -->
 
 		<div id="container" class="clearfix">
 			<!-- aside 없음 -->
@@ -78,7 +38,7 @@ System.out.println(authUser);
 							jsp&serlvet(모델2) 방식으로 제작되었습니다.<br> <br> 자바 수업 + 데이터베이스
 							수업 + 웹프로그래밍 수업<br> 배운 거 있는거 없는 거 다 합쳐서 만들어 놓은 사이트 입니다.<br>
 							<br> (자유롭게 꾸며보세요!!)<br> <br> <br> <a class=""
-								href="">[방명록에 글 남기기]</a>
+								href="./guest">[방명록에 글 남기기]</a>
 						</p>
 					</div>
 					<!-- //greetings -->
@@ -94,7 +54,8 @@ System.out.println(authUser);
 		</div>
 		<!-- //container -->
 
-		<div id="footer">Copyright ⓒ 2022 KWAKWT. All right reserved.</div>
+		<!-- footer -->
+		<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
 		<!-- //footer -->
 
 	</div>

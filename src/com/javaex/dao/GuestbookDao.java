@@ -40,7 +40,7 @@ public class GuestbookDao {
 	}
 
 	// 자원정리 메소드
-	public void close() {
+	private void close() {
 		// 5. 자원정리
 		try {
 			if (rs != null) {
@@ -66,16 +66,16 @@ public class GuestbookDao {
 
 		try {
 			// 3. SQL문 준비 / 바인딩 / 실행
-			String select = "";
-			select += "select  no, ";
-			select += "        name, ";
-			select += "        password, ";
-			select += "        content, ";
-			select += "        reg_date ";
-			select += "from guestbook ";
-			select += "order by reg_date desc ";
+			String query = "";
+			query += "select  no, ";
+			query += "        name, ";
+			query += "        password, ";
+			query += "        content, ";
+			query += "        reg_date ";
+			query += "from guestbook ";
+			query += "order by reg_date desc ";
 
-			pstmt = conn.prepareStatement(select);
+			pstmt = conn.prepareStatement(query);
 			rs = pstmt.executeQuery();
 
 			// 4.결과처리
@@ -106,11 +106,11 @@ public class GuestbookDao {
 
 		try {
 			// 3. SQL문 준비 / 바인딩 / 실행
-			String insert = "";
-			insert += "insert into guestbook (no, name, password, content, reg_date) ";
-			insert += "values (seq_guestbook_no.nextval, ?, ?, ?, sysdate) ";
+			String query = "";
+			query += "insert into guestbook (no, name, password, content, reg_date) ";
+			query += "values (seq_guestbook_no.nextval, ?, ?, ?, sysdate) ";
 
-			pstmt = conn.prepareStatement(insert);
+			pstmt = conn.prepareStatement(query);
 
 			pstmt.setString(1, gbVo.getName());
 			pstmt.setString(2, gbVo.getPassword());
@@ -138,12 +138,12 @@ public class GuestbookDao {
 
 		try {
 			// 3. SQL문 준비 / 바인딩 / 실행
-			String delete = "";
-			delete += "delete from guestbook ";
-			delete += "where no = ? ";
-			delete += "and password = ? ";
+			String query = "";
+			query += "delete from guestbook ";
+			query += "where no = ? ";
+			query += "and password = ? ";
 
-			pstmt = conn.prepareStatement(delete);
+			pstmt = conn.prepareStatement(query);
 
 			pstmt.setInt(1, gbVo.getNo());
 			pstmt.setString(2, gbVo.getPassword());

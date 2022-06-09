@@ -9,10 +9,11 @@
 <title>Insert title here</title>
 <link href="/mysite2/assets/css/mysite.css" rel="stylesheet"
 	type="text/css">
-<link href="/mysite2/assets/css/user.css" rel="stylesheet"
+<link href="/mysite2/assets/css/board.css" rel="stylesheet"
 	type="text/css">
 
 </head>
+
 <body>
 	<div id="wrap">
 
@@ -22,11 +23,10 @@
 
 		<div id="container" class="clearfix">
 			<div id="aside">
-				<h2>회원</h2>
+				<h2>게시판</h2>
 				<ul>
-					<li>회원정보</li>
-					<li>로그인</li>
-					<li>회원가입</li>
+					<li><a href="">일반게시판</a></li>
+					<li><a href="">댓글게시판</a></li>
 				</ul>
 			</div>
 			<!-- //aside -->
@@ -34,47 +34,43 @@
 			<div id="content">
 
 				<div id="content-head">
-					<h3>로그인</h3>
+					<h3>게시판</h3>
 					<div id="location">
 						<ul>
 							<li>홈</li>
-							<li>회원</li>
-							<li class="last">로그인</li>
+							<li>게시판</li>
+							<li class="last">일반게시판</li>
 						</ul>
 					</div>
 					<div class="clear"></div>
 				</div>
 				<!-- //content-head -->
 
-				<div id="user">
-					<div id="loginForm">
-						<form action="./user" method="get">
-							<input type="hidden" name="action" value="login">
-
-							<!-- 아이디 -->
+				<div id="board">
+					<div id="writeForm">
+						<form action="./board" method="get">
+							<!-- 제목 -->
 							<div class="form-group">
-								<label class="form-text" for="input-uid">아이디</label> <input
-									type="text" id="input-uid" name="id" value=""
-									placeholder="아이디를 입력하세요">
+								<label class="form-text" for="txt-title">제목</label> <input
+									type="text" id="txt-title" name="title" value=""
+									placeholder="제목을 입력해 주세요">
 							</div>
 
-							<!-- 비밀번호 -->
+							<!-- 내용 -->
 							<div class="form-group">
-								<label class="form-text" for="input-pass">비밀번호</label> <input
-									type="password" id="input-pass" name="password" value=""
-									placeholder="비밀번호를 입력하세요">
+								<textarea id="txt-content"></textarea>
 							</div>
 
-							<!-- 버튼영역 -->
-							<div class="button-area">
-								<button type="submit" id="btn-submit">로그인</button>
-							</div>
+							<a id="btn_cancel" href="./board">취소</a>
+							<button id="btn_add" type="submit">등록</button>
+							<input type="hidden" name="action" value="write">
 
 						</form>
+						<!-- //form -->
 					</div>
-					<!-- //loginForm -->
+					<!-- //writeForm -->
 				</div>
-				<!-- //user -->
+				<!-- //board -->
 			</div>
 			<!-- //content  -->
 
