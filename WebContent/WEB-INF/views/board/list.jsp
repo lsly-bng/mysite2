@@ -78,22 +78,20 @@
 										<c:if test="${authUser.no == bVo.userNo}">
 											<td><a href="./board?action=delete&no=${bVo.no}">[삭제]</a></td>
 										</c:if>
-										<c:if test="${authUser.no != bVo.userNo}">
-											<td></td>
-										</c:if>
 									</tr>
 								</c:forEach>
+								
 							</tbody>
 						</table>
 
 						<div id="paging">
 							<ul>
 								<li><a href="">◀</a></li>
-								<li class="active"><a href="">1</a></li>
+								<li><a href="">1</a></li>
 								<li><a href="">2</a></li>
 								<li><a href="">3</a></li>
 								<li><a href="">4</a></li>
-								<li><a href="">5</a></li>
+								<li class="active"><a href="">5</a></li>
 								<li><a href="">6</a></li>
 								<li><a href="">7</a></li>
 								<li><a href="">8</a></li>

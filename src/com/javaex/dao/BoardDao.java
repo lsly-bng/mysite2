@@ -83,7 +83,7 @@ public class BoardDao {
 			query += "where b.user_no = u.no ";
 
 			// 바인딩
-			if (keyword != "" || keyword == null) {
+			if (keyword == "" || keyword == null) {
 				query += "order by reg_date desc  ";
 				pstmt = conn.prepareStatement(query);
 			} else {
