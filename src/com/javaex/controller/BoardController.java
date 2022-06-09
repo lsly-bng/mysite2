@@ -121,7 +121,7 @@ public class BoardController extends HttpServlet {
 			WebUtil.forward(request, response, "/WEB-INF/views/board/modifyForm.jsp");
 
 		} else if ("modify".equals(action)) {
-
+			
 			// 파라미터에서 값 꺼내기
 			int no = Integer.parseInt(request.getParameter("no"));
 			String title = request.getParameter("title");

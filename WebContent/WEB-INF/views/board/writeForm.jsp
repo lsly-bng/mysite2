@@ -58,7 +58,7 @@
 
 							<!-- 내용 -->
 							<div class="form-group">
-								<textarea id="txt-content"></textarea>
+								<textarea id="txt-content">${bVo.content}</textarea>
 							</div>
 
 							<a id="btn_cancel" href="./board">취소</a>
